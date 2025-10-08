@@ -24,6 +24,7 @@ class excelManager:
             self.saveChange()
     
     def deleteData(self, targetedNim:str,saveChange:bool=False):
+        indexBaris = self._data(self._data['NIM'] == targetedNim)
         self._data.drop(indexBaris,inplace=True)
         # kerjakan disini
         # clue cara delete row: df.drop(indexBaris, inplace=True); contoh: df.drop(0,inplace=True)
@@ -33,8 +34,8 @@ class excelManager:
             self.saveChange()
     
     def editData(self, targetedNim:str, newData:dict,saveChange:bool=False) -> dict:
-        indexBaris = 
-
+        indexBaris = self._data(self._data['NIM'] == targetedNim)
+        self._data.at[indexBaris,'NIM'] = 1
         # kerjakan disini
         # clue cara ganti value: df.at[indexBaris,namaKolom] = value; contoh: df.at[0,ID] = 1
         if (saveChange): 

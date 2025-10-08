@@ -68,5 +68,7 @@ if (filter != ""):
         st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] <= int(filter)])
     elif (filterSelectBox == '>='):
         st.table(em.getDataFrame()[em.getDataFrame()[targetFilterColumn] >= int(filter)])
+    else:
+        pass
     # TODO: lanjutkan code di atas
     # note: cara filter ada di modul
